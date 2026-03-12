@@ -1,0 +1,51 @@
+.stats-bar {
+  background: var(--accent);
+  padding: 0;
+}
+
+.stats-inner {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+}
+
+.stat-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 20px;
+  position: relative;
+  text-align: center;
+  gap: 6px;
+}
+
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.04em;
+  color: #fff;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+
+.stat-sep {
+  position: absolute;
+  right: 0; top: 25%; bottom: 25%;
+  width: 1px;
+  background: rgba(255,255,255,0.2);
+}
+
+@media (max-width: 600px) {
+  .stats-inner { flex-wrap: wrap; }
+  .stat-block { width: 50%; flex: unset; }
+  .stat-sep { display: none; }
+}

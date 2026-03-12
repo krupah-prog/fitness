@@ -1,0 +1,100 @@
+.testimonials-section {
+  background: var(--surface);
+  text-align: center;
+}
+
+.testimonials-section .section-title {
+  margin-bottom: 60px;
+}
+
+.testimonial-stage {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.testimonial-quote {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 52px 48px;
+  position: relative;
+  animation: fadeUp 0.5s ease;
+}
+
+.quote-mark {
+  position: absolute;
+  top: 24px; left: 36px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem;
+  color: var(--accent);
+  opacity: 0.25;
+  line-height: 1;
+}
+
+.quote-text {
+  font-size: 1.1rem;
+  color: var(--text);
+  line-height: 1.85;
+  font-style: italic;
+  margin-bottom: 36px;
+}
+
+.quote-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.quote-avatar {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.quote-role {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.stars {
+  color: var(--accent2);
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  margin-left: auto;
+}
+
+.testimonial-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.nav-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+  border: 1px solid var(--muted);
+  transition: var(--transition);
+}
+
+.nav-dot.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.3);
+}

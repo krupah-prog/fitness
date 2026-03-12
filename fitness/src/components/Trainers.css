@@ -1,0 +1,99 @@
+.trainers-section {
+  background: var(--surface);
+  position: relative;
+}
+
+.trainers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.trainers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.trainer-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.trainer-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 69, 0, 0.3);
+  box-shadow: var(--glow);
+}
+
+.trainer-avatar {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, var(--trainer-color, var(--accent)) 0%, rgba(0,0,0,0.6) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  color: rgba(255,255,255,0.15);
+  letter-spacing: 0.05em;
+  /* When you have photos, replace with:
+     background: url('/trainer1.jpg') center/cover no-repeat; */
+}
+
+.trainer-info {
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.trainer-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--text);
+}
+
+.trainer-role {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.trainer-specialty {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.trainer-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.tbadge {
+  font-size: 0.72rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 900px) {
+  .trainers-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .trainers-grid { grid-template-columns: 1fr; }
+}

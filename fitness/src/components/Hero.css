@@ -1,0 +1,111 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* BG — replace with a real gym photo */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255,69,0,0.12) 0%, transparent 50%),
+    linear-gradient(to bottom, rgba(13,13,13,0.3) 0%, rgba(13,13,13,0.92) 100%),
+    /* Swap this for: url('/gym-hero.jpg') center/cover no-repeat */
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.02) 0px,
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+  background-color: #0D0D0D;
+}
+
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  animation: fadeUp 0.9s ease;
+}
+
+.hero-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(5rem, 14vw, 13rem);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin-bottom: 28px;
+}
+
+.fire-text {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: flicker 3s ease-in-out infinite;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+/* Marquee */
+.hero-marquee-wrapper {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  width: 100vw;
+  margin-left: -28px;
+}
+
+.hero-marquee {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+.marquee-item {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  padding: 0 28px;
+  white-space: nowrap;
+}
+
+.marquee-item em {
+  font-style: normal;
+  color: var(--accent);
+  margin-left: 28px;
+}
+
+@media (max-width: 600px) {
+  .hero-headline { font-size: clamp(4rem, 22vw, 8rem); }
+  .hero-actions { flex-direction: column; }
+}
